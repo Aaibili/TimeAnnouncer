@@ -1,0 +1,24 @@
+messages:
+  morning: "§e早上好！新的一天开始了！"
+  noon: "§6中午好！记得吃午饭哦！"
+  evening: "§d晚上好！祝您度过愉快的夜晚！"
+  midnight: "§5午夜了，注意休息！"
+
+time-settings:
+  morning:
+    hour: 6
+    minute: 0
+  noon:
+    hour: 12
+    minute: 0
+  evening:
+    hour: 18
+    minute: 0
+  midnight:
+    hour: 0
+    minute: 0
+
+settings:
+  enabled: true
+  check-interval: 5
+  timezone: "Asia/Shanghai"
