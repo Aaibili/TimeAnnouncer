@@ -56,7 +56,7 @@ public class TimeCheckTask extends BukkitRunnable {
                 player.sendMessage(message);
             }
         }
-        plugin.getLogger().info("已发送时间公告: " + message);
+        plugin.getLogger().info("已发送时间公告: | Time announcement sent: " + message);
     }
 
     public void resetLastAnnounced() {

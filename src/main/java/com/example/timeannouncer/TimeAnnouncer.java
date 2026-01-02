@@ -21,7 +21,7 @@ public class TimeAnnouncer extends JavaPlugin {
         timeCheckTask = new TimeCheckTask(this);
         timeCheckTask.runTaskTimer(this, checkInterval, checkInterval);
 
-        getLogger().info("TimeAnnouncer 插件已启用！");
+        getLogger().info("TimeAnnouncer 插件已启用！ | TimeAnnouncer plugin enabled!");
     }
 
     @Override
@@ -29,14 +29,14 @@ public class TimeAnnouncer extends JavaPlugin {
         if (timeCheckTask != null) {
             timeCheckTask.cancel();
         }
-        getLogger().info("TimeAnnouncer 插件已禁用！");
+        getLogger().info("TimeAnnouncer 插件已禁用！ | TimeAnnouncer plugin disabled!");
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (command.getName().equalsIgnoreCase("timeannouncer")) {
             if (!sender.hasPermission("timeannouncer.use")) {
-                sender.sendMessage(ChatColor.RED + "你没有权限使用此命令！");
+                sender.sendMessage(ChatColor.RED + "你没有权限使用此命令！ | You don't have permission to use this command!");
                 return true;
             }
 
@@ -45,20 +45,20 @@ public class TimeAnnouncer extends JavaPlugin {
                 getConfig().set("settings.enabled", enabled);
                 saveConfig();
 
-                String status = enabled ? ChatColor.GREEN + "已启用" : ChatColor.RED + "已禁用";
-                sender.sendMessage(ChatColor.GOLD + "时间公告功能 " + status);
+                String status = enabled ? ChatColor.GREEN + "已启用 | Enabled" : ChatColor.RED + "已禁用 | Disabled";
+                sender.sendMessage(ChatColor.GOLD + "时间公告功能 | Time announcement feature " + status);
                 return true;
             }
 
             if (args[0].equalsIgnoreCase("reload")) {
                 if (!sender.hasPermission("timeannouncer.reload")) {
-                    sender.sendMessage(ChatColor.RED + "你没有权限使用此命令！");
+                    sender.sendMessage(ChatColor.RED + "你没有权限使用此命令！ | You don't have permission to use this command!");
                     return true;
                 }
                 reloadConfig();
                 enabled = getConfig().getBoolean("settings.enabled", true);
                 timeCheckTask.resetLastAnnounced();
-                sender.sendMessage(ChatColor.GREEN + "配置文件已重载！");
+                sender.sendMessage(ChatColor.GREEN + "配置文件已重载！ | Configuration file reloaded!");
                 return true;
             }
 
