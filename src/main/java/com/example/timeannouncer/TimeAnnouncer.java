@@ -62,7 +62,7 @@ public class TimeAnnouncer extends JavaPlugin {
                 return true;
             }
 
-            sender.sendMessage(ChatColor.RED + "用法: /" + label + " [reload]");
+            sender.sendMessage(ChatColor.RED + "用法: /" + label + " [reload] | Usage: /" + label + " [reload]");
             return true;
         }
         return false;
